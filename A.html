@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="A.css" />
+        <title>Pas touche</title>
+        <style>
+        body
+            {
+                background-image: url(logos.jpg);
+            }
+        </style>
+
+<script type="text/javascript">
+
+function spin_wheel(ww,button) {
+
+this.wheel = document.getElementById(ww);
+ this.rando = 0;
+document.getElementById(button).addEventListener("click",this.tourne.bind(this), false);
+   }
+
+spin_wheel.prototype.tourne=function(){
+
+this.rando +=Math.round( (Math.random() * 360) + 2880);
+
+this. wheel.style.webkitTransform = "rotate(" + this.rando + "deg)";
+this.wheel.style.mozTransform = "rotate(" + this.rando + "deg)";
+this.wheel.style.msTransform = "rotate(" + this.rando + "deg)";
+this.wheel.style.transform = "rotate(" + this.rando + "deg)";
+
+}
+
+
+function spin_inst() {
+
+  new spin_wheel('wheel' ,'button' )
+  new spin_wheel('wheel1' ,'button1' )
+  new spin_wheel('wheel2' ,'button2' )
+}
+
+window.addEventListener("load",spin_inst, false);
+
+</script>
+</head>
+<body>
+        <!-- ETOILE POUR EQUIPES -->
+
+<img src="file:///C:/Users/scuby/Downloads/puhagH1%20(2).png" id="wheel">
+<br>
+<img src="http://www.blimpage.com/pants/wheel_of_lunch_peg.svg" id="peg">
+<br>
+<button id="button">Etoile</button>
+
+        <!-- FIN ETOILE POUR LES EQUIPES -->
+
+    </body>
+</html>
